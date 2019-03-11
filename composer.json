@@ -9,6 +9,10 @@
   }],
   "extra": {
     "map": [
+      ["app/etc/modules/Agere_Robots.xml", "app/etc/modules/Agere_Robots.xml"],
+      ["app/code/local/Agere/Robots/", "app/code/local/Agere/Robots/"],
+      ["app/design/adminhtml/default/default/layout/agere/robots.xml", "app/design/adminhtml/default/default/layout/agere/robots.xml"]
+
     ]
   }
 }
