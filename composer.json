@@ -1,0 +1,15 @@
+{
+  "name": "stagem/magento-stagem-robots",
+  "type": "magento-module",
+  "license":"MIT Licence",
+  "description":"Magento 1 module for changing robots.txt from admin",
+  "authors":[{
+    "name":"Vlad Kozak",
+    "email":"vlad.gem.typ@gmail.com"
+  }],
+  "extra": {
+    "map": [
+      ["app/etc/modules/AW_Followupemail.xml", "app/etc/modules/AW_Followupemail.xml"]
+    ]
+  }
+}
