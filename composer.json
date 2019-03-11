@@ -9,7 +9,6 @@
   }],
   "extra": {
     "map": [
-      ["app/etc/modules/AW_Followupemail.xml", "app/etc/modules/AW_Followupemail.xml"]
     ]
   }
 }
