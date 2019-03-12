@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Stagem_Robots>
+			<version>1.0.1</version>
+		</Stagem_Robots>
+	</modules>
+
+	<frontend>
+		<routers>
+			<stagem_robots>
+				<use>standard</use>
+				<args>
+					<module>Stagem_Robots</module>
+					<frontName>robots</frontName>
+				</args>
+			</stagem_robots>
+		</routers>
+	</frontend>
+
+	<!-- is important place this code (<adminhtml/>) in config.xml if you wand place this in adminhtml.xml nothing happen -->
+	<adminhtml>
+		<layout>
+			<updates>
+				<stagem_robots>
+					<!--
+					We again keep a nice naming convention and make our module upgrade proof by placing it in a separate folder
+					- Since we are in the adminhtml node, this will look for the XML file in the app/design/adminhtml/default/default root folder
+					-->
+					<file>stagem/robots.xml</file>
+				</stagem_robots>
+			</updates>
+		</layout>
+	</adminhtml>
+
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<!-- This is how we load our Adminhtml controllers -->
+					<modules>
+						<stagem_robots after="Mage_Adminhtml">Stagem_Robots_Adminhtml</stagem_robots>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+
+	<global>
+		<helpers>
+			<stagem_robots>
+				<!-- This is where we define our helper directory -->
+				<class>Stagem_Robots_Helper</class>
+			</stagem_robots>
+		</helpers>
+		<blocks>
+			<stagem_robots>
+				<!-- Set a block definition and lookup directory -->
+				<class>Stagem_Robots_Block</class>
+			</stagem_robots>
+		</blocks>
+		<models>
+			<stagem_robots>
+				<!-- This is where we define our model directory -->
+				<class>Stagem_Robots_Model</class>
+				<!-- Define a resource to create a custom table -->
+				<resourceModel>stagem_robots_resource</resourceModel>
+			</stagem_robots>
+			<!-- Here's our resource model we'll use to create a database table -->
+			<stagem_robots_resource>
+				<class>Stagem_Robots_Model_Resource</class>
+				<entities>
+					<!-- Let's define our table, we'll call it with the baz name, but the real table is foo_bar_baz -->
+					<!-- After we define our entity, we can call it with our model by calling foo_bar/baz -->
+					<robots>
+						<table>stagem_robots</table>
+					</robots>
+				</entities>
+			</stagem_robots_resource>
+		</models>
+		<!-- And finally we define our resource setup script -->
+		<resources>
+			<stagem_robots_setup>
+				<setup>
+					<module>Stagem_Robots</module>
+				</setup>
+			</stagem_robots_setup>
+		</resources>
+
+		<events>
+			<controller_front_init_routers>
+				<observers>
+					<stagem_robots_add_router_observer>
+						<type>singleton</type>
+						<class>Stagem_Robots_Model_Observer</class>
+						<method>hookAddModuleToRequest</method>
+					</stagem_robots_add_router_observer>
+				</observers>
+			</controller_front_init_routers>
+		</events>
+	</global>
+
+</config>

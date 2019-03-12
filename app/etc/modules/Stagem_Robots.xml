@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Stagem_Robots>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Stagem_Robots>
+	</modules>
+</config>
