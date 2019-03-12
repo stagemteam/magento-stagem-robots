@@ -9,9 +9,9 @@
   }],
   "extra": {
     "map": [
-      ["app/etc/modules/Agere_Robots.xml", "app/etc/modules/Agere_Robots.xml"],
-      ["app/code/local/Agere/Robots/", "app/code/local/Agere/Robots/"],
-      ["app/design/adminhtml/default/default/layout/agere/robots.xml", "app/design/adminhtml/default/default/layout/agere/robots.xml"]
+      ["app/etc/modules/Stagem_Robots.xml", "app/etc/modules/Stagem_Robots.xml"],
+      ["app/code/local/Stagem/Robots/", "app/code/local/Stagem/Robots/"],
+      ["app/design/adminhtml/default/default/layout/stagem/robots.xml", "app/design/adminhtml/default/default/layout/stagem/robots.xml"]
 
     ]
   }

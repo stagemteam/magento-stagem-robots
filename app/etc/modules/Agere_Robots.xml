@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config>
-	<modules>
-		<Agere_Robots>
-			<active>true</active>
-			<codePool>local</codePool>
-		</Agere_Robots>
-	</modules>
-</config>
