@@ -24,6 +24,9 @@ class Stagem_Robots_Model_Observer extends Varien_Event_Observer {
 		if ($front->getRequest()->getPathInfo() === '/robots.txt') {
 			$requestUri = $front->getRequest()->getRequestUri();
 			if (Mage::helper('stagem_robots')->canBeStoreCodeInUrl()) {
+			    $storePart = '/' . Mage::app()->getStore()->getCode() . '/';
+                // Reduce store code duplication in URL
+                $requestUri = str_replace($storePart, '', $requestUri);
 				$requestUri = '/' . Mage::app()->getStore()->getCode() . '/' . $requestUri;
 			}
 			$front->getRequest()->setRequestUri($requestUri);
